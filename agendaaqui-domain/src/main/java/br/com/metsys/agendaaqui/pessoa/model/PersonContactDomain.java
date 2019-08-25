@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Getter
 @EqualsAndHashCode
 @ToString
-public class ContactDomain implements Serializable {
+public class PersonContactDomain implements Serializable {
 
     private static final long serialVersionUID = 7288244280436242799L;
 

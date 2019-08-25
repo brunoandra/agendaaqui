@@ -24,10 +24,6 @@ public class PersonDomain implements Serializable {
 
     String email;
 
-    List<ContactDomain> contatos;
-
-
-
-
+    List<PersonContactDomain> contatos;
 
 }

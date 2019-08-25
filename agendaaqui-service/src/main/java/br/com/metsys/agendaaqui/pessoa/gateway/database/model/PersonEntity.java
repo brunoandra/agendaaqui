@@ -1,6 +1,6 @@
 package br.com.metsys.agendaaqui.pessoa.gateway.database.model;
 
-import br.com.metsys.agendaaqui.pessoa.model.ContactDomain;
+import br.com.metsys.agendaaqui.pessoa.model.PersonContactDomain;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -30,5 +30,5 @@ public class PersonEntity implements Serializable {
 
     String email;
 
-    List<ContactDomain> contatos;
+    List<PersonContactDomain> contatos;
 }
