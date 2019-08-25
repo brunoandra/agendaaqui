@@ -1,0 +1,37 @@
+package br.com.metsys.agendaaqui.pessoa.usecase;
+
+import br.com.metsys.agendaaqui.pessoa.exception.FindPersonUseCaseException;
+import br.com.metsys.agendaaqui.pessoa.exception.UseCaseException;
+import br.com.metsys.agendaaqui.pessoa.gateway.FindPersonGateway;
+import br.com.metsys.agendaaqui.pessoa.gateway.database.exception.GatewayException;
+import br.com.metsys.agendaaqui.pessoa.model.PersonDomain;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+@Service
+public class FindPersonUseCase {
+    private FindPersonGateway findPersonGateway;
+
+    @Autowired
+    public FindPersonUseCase(FindPersonGateway findPersonGateway) {
+        this.findPersonGateway = findPersonGateway;
+    }
+
+    public PersonDomain execute(Long id) throws UseCaseException {
+
+        try {
+            Optional<PersonDomain> personDomain = findPersonGateway.execute(id);
+            if (!personDomain.isPresent())
+            {
+                throw new FindPersonUseCaseException("Pessoa não encontrada");
+            }
+            return personDomain.get();
+
+        }catch (GatewayException ex)
+        {
+            throw new FindPersonUseCaseException("Problema ao buscar a pessoa", ex);
+        }
+    }
+}
