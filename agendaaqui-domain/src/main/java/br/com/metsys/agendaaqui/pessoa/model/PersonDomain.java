@@ -16,6 +16,8 @@ public class PersonDomain implements Serializable {
 
     private static final long serialVersionUID = -1510086314768726870L;
 
+    Long id;
+
     String nome;
 
     String sobrenome;
