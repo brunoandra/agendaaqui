@@ -1,7 +1,11 @@
 package br.com.metsys.agendaaqui.pessoa.gateway.database;
 
 import br.com.metsys.agendaaqui.pessoa.gateway.FindPersonGateway;
+import br.com.metsys.agendaaqui.pessoa.gateway.database.exception.FindGatewayException;
+import br.com.metsys.agendaaqui.pessoa.gateway.database.exception.GatewayException;
+import br.com.metsys.agendaaqui.pessoa.gateway.database.model.PersonEntity;
 import br.com.metsys.agendaaqui.pessoa.gateway.database.repository.PersonRepository;
+import br.com.metsys.agendaaqui.pessoa.gateway.database.translate.PersonEntityToPersonDomainTranslate;
 import br.com.metsys.agendaaqui.pessoa.model.PersonDomain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +21,17 @@ public class FindPersonGatewayImp implements FindPersonGateway {
     }
 
     @Override
-    public Optional<PersonDomain> execute(long id) {
-        return Optional.empty();
+    public Optional<PersonDomain> execute(long id) throws GatewayException {
+        try{
+            PersonEntity personEntity = personRepository.getOne(id);
+
+            PersonDomain personDomainReturn = PersonEntityToPersonDomainTranslate.translator(personEntity);
+
+            return Optional.ofNullable(personDomainReturn);
+
+        }catch (Exception ex)
+        {
+            throw new FindGatewayException("Problema ao buscar a pessoa", ex);
+        }
     }
 }
