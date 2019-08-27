@@ -9,7 +9,10 @@ import br.com.metsys.agendaaqui.pessoa.usecase.FindPersonUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class FindPersonController implements FindPersonApi {
     private FindPersonUseCase findPersonUseCase;
 
@@ -19,7 +22,7 @@ public class FindPersonController implements FindPersonApi {
     }
 
     @Override
-    public ResponseEntity<FindPersonResponse> execute(Long id) throws UseCaseException {
+    public ResponseEntity<FindPersonResponse> execute(@RequestParam Long id) throws UseCaseException {
         PersonDomain personDomainReturn = findPersonUseCase.execute(id);
         ResponseEntity<FindPersonResponse> response = new ResponseEntity<>(PersonDomainToFindPersonResponseTranslate.translator(personDomainReturn), HttpStatus.OK);
         return response;
