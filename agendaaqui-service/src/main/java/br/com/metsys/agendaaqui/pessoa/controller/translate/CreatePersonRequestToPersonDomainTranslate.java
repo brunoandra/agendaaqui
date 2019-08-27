@@ -7,6 +7,13 @@ import org.modelmapper.ModelMapper;
 public class CreatePersonRequestToPersonDomainTranslate {
     public static PersonDomain translator(CreatePersonRequest createPersonRequest) {
         ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(createPersonRequest, PersonDomain.class);
+        PersonDomain personDomain = modelMapper.map(createPersonRequest, PersonDomain.class);
+
+        personDomain = PersonDomain.builder()
+                .nome(createPersonRequest.getNome())
+                .sobrenome(createPersonRequest.getSobrenome())
+                .email(createPersonRequest.getEmail())
+                .build();
+        return personDomain;
     }
 }
