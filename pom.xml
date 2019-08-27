@@ -8,6 +8,18 @@
     <artifactId>agendaaqui</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <name>Agenda Aqui - Parent</name>
+    <description>Agenda Aqui</description>
+    <url>https://github.com/brunoandra/agendaaqui.git</url>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.4.RELEASE</version>
+        <relativePath/>
+    </parent>
+
     <modules>
         <module>agendaaqui-domain</module>
         <module>agendaaqui-client</module>
