@@ -14,7 +14,7 @@ public class ContactPersonRequest implements Serializable {
 
     private static final long serialVersionUID = -1882343528221488567L;
 
-    String ddd;
-    String numero;
-    boolean principal;
+    private String ddd;
+    private String numero;
+    private boolean principal;
 }

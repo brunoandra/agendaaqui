@@ -21,9 +21,9 @@ public class PersonContactEntity implements Serializable {
     private static final long serialVersionUID = 7288244280436242799L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
-    String ddd;
-    String numero;
-    boolean principal;
+    private long id;
+    private String ddd;
+    private String numero;
+    private boolean principal;
 
 }

@@ -18,13 +18,13 @@ public class PersonEntity implements Serializable {
     private static final long serialVersionUID = 5786802975804066626L;
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    long id;
+    private long id;
 
-    String nome;
+    private String nome;
 
-    String sobrenome;
+    private String sobrenome;
 
-    String email;
+    private String email;
     @ElementCollection
-    List<PersonContactEntity> contatos;
+    private List<PersonContactEntity> contatos;
 }

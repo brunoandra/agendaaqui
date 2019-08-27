@@ -22,7 +22,7 @@ public class CreatePersonController implements CreatePersonApi {
     }
 
     @Override
-    public ResponseEntity<Long> execute(@RequestBody CreatePersonRequest createPersonRequest) throws UseCaseException {
+    public ResponseEntity<Long> execute(@RequestBody final CreatePersonRequest createPersonRequest) throws UseCaseException {
         PersonDomain personDomain = CreatePersonRequestToPersonDomainTranslate.translator(createPersonRequest);
         PersonDomain personDomainReturn = createPersonUseCase.execute(personDomain);
         ResponseEntity<Long> response = new ResponseEntity<>(personDomainReturn.getId(), HttpStatus.OK);

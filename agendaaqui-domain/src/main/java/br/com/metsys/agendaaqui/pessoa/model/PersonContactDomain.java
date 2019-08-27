@@ -1,9 +1,6 @@
 package br.com.metsys.agendaaqui.pessoa.model;
 
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 
@@ -11,12 +8,14 @@ import java.io.Serializable;
 @Getter
 @EqualsAndHashCode
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class PersonContactDomain implements Serializable {
 
     private static final long serialVersionUID = 7288244280436242799L;
 
-    String ddd;
-    String numero;
-    boolean principal;
+    private String ddd;
+    private String numero;
+    private boolean principal;
 
 }

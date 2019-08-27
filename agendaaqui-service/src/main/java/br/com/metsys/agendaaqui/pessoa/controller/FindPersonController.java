@@ -22,7 +22,7 @@ public class FindPersonController implements FindPersonApi {
     }
 
     @Override
-    public ResponseEntity<FindPersonResponse> execute(@RequestParam Long id) throws UseCaseException {
+    public ResponseEntity<FindPersonResponse> execute(@RequestParam final Long id) throws UseCaseException {
         PersonDomain personDomainReturn = findPersonUseCase.execute(id);
         ResponseEntity<FindPersonResponse> response = new ResponseEntity<>(PersonDomainToFindPersonResponseTranslate.translator(personDomainReturn), HttpStatus.OK);
         return response;

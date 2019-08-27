@@ -14,13 +14,13 @@ import java.util.List;
 public class CreatePersonRequest implements Serializable {
 
     private static final long serialVersionUID = -4259328315821535161L;
-    Long id;
+    private Long id;
 
-    String nome;
+    private String nome;
 
-    String sobrenome;
+    private String sobrenome;
 
-    String email;
+    private String email;
 
-    List<ContactPersonRequest> contatos;
+    private List<ContactPersonRequest> contatos;
 }

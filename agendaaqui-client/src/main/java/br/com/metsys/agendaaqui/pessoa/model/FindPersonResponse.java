@@ -15,13 +15,13 @@ public class FindPersonResponse implements Serializable {
 
 
     private static final long serialVersionUID = -3310321732623629347L;
-    Long id;
+    private Long id;
 
-    String nome;
+    private String nome;
 
-    String sobrenome;
+    private String sobrenome;
 
-    String email;
+    private String email;
 
-    List<ContactPersonRequest> contatos;
+    private List<ContactPersonRequest> contatos;
 }
