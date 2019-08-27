@@ -10,6 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>agendaaqui-service</artifactId>
+    <name>agenda-aqui - Service</name>
+    <description>agenda-aqui microservice module</description>
+
     <build>
         <plugins>
             <plugin>
@@ -80,6 +83,10 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
         </dependency>
 
         <!-- Test -->

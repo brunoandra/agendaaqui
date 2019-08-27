@@ -1,9 +1,6 @@
 package br.com.metsys.agendaaqui.pessoa.gateway.database.model;
 
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +10,7 @@ import java.io.Serializable;
 
 @Builder
 @Getter
+@Setter
 @EqualsAndHashCode
 @ToString
 @Entity(name = "personcontact")
