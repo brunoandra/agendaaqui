@@ -146,6 +146,11 @@
             <artifactId>protobuf-java</artifactId>
             <version>3.9.1</version>
         </dependency>
+        <!--Zipkin-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+        </dependency>
         <!-- Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
